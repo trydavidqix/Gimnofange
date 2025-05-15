@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-black text-white font-sans;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-red-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-red-600;
+  }
+  img {
+    filter: grayscale(0%);
+    transition: filter 0.5s ease;
+  }
+  @media (min-width: 640px) {
+    img {
+      filter: grayscale(100%);
+    }
+    img:hover,
+    .group:hover img {
+      filter: grayscale(0%);
+    }
+  }
+}
